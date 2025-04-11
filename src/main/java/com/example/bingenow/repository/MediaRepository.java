@@ -10,4 +10,6 @@ public interface MediaRepository extends MongoRepository<Media, String>
     List<Media> findByNameContainingIgnoreCase(String name);
     List<Media> findByIsFeaturedTrue();
     List<Media> findByIsFeaturedAndIsMovie(Boolean isFeatured, Boolean isMovie);
+    List<Media> findByNameContainingIgnoreCaseAndIsMovie(String name, Boolean isMovie);
+
 }

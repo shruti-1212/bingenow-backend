@@ -13,9 +13,11 @@ public class CorsConfig {
     CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("*"); 
-        config.addAllowedMethod("*"); 
-        config.addAllowedHeader("*"); 
+        config.addAllowedOrigin("http://localhost:3000"); // Specify trusted domain
+        config.addAllowedMethod("GET");                 // Allow only GET
+        config.addAllowedMethod("POST");                // Allow only POST
+        config.addAllowedHeader("Content-Type");        // Allow specific headers
+        config.addAllowedHeader("Authorization");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }

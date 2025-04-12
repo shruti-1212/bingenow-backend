@@ -14,6 +14,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("http://localhost:3000"); // Specify trusted domain
+        config.addAllowedOrigin("https://bingenow-backend.onrender.com"); // Add your deployed backend URL
         config.addAllowedMethod("GET");                 // Allow only GET
         config.addAllowedMethod("POST");                // Allow only POST
         config.addAllowedHeader("Content-Type");        // Allow specific headers
